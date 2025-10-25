@@ -1,5 +1,7 @@
 'use strict';
 
+const Library = [];
+
 function Book (title,author,pages,haveRead) {
     if (!new.target) {
         throw Error ("You must use the 'new' operator to call the constructor");
