@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=poppins:300,400,600" rel="stylesheet" />
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
-  </head>
-  <body>
-    <table>
-      <thead>
-        <tr id="libraryTable">
-          <th>Title</th>
-          <th>Author</th>
-          <th>Pages</th>
-          <th>Read</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="libraryTableBody">
-        
-      </tbody>
+</head>
+
+<body>
+    <header class="navbar">
+        <h1>📚 My Library</h1>
+        <button id="newBookBtn">+ Add Book</button>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr id="libraryTable">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="libraryTableBody">
+
+            </tbody>
+
+    </main>
     </table>
-  </body>
+</body>
+
 </html>

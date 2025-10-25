@@ -1,0 +1,111 @@
+:root {
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --primary-color: #4a90e2;    
+  --secondary-color: #50e3c2;   
+  --text-color: #333;
+  --border-color: #ddd;
+  --hover-color: #e9f2ff;
+  --semi-transparent: rgba(255, 255, 255, 0.6);
+  --danger-color: #e74c3c;     
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--semi-transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h1 {
+  font-size: 1.4rem;
+}
+
+.navbar button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.navbar button:hover {
+  background-color: var(--secondary-color);
+}
+
+table {
+  width: 90%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+th {
+  background-color: var(--hover-color);
+  font-weight: 600;
+}
+th:last-child,
+td:last-child {
+    text-align: center;
+}
+tr {
+  transition: background-color 0.6s ease;
+}
+tr:hover {
+  background-color: var(--hover-color);
+}
+
+td button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+td button:first-child {
+  background-color: var(--secondary-color);
+  color: white;
+  margin-right: 0.4rem;
+}
+
+td button:last-child {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+td button:hover {
+  opacity: 0.8;
+}
