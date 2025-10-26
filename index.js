@@ -46,6 +46,8 @@ function displayBooks() {
 
   Library.forEach((book) => {
     const tableRow = document.createElement("tr");
+    tableRow.dataset.id = book.id;
+
 
     const titleTableData = document.createElement("td");
     titleTableData.textContent = book.title;
