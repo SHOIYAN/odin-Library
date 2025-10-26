@@ -80,3 +80,37 @@ function displayBooks() {
 
 
 displayBooks();
+
+// modal section
+
+const dialog = document.getElementById("bookDialog");
+const addBookBtn = document.getElementById("newBookBtn");
+const addModalBtn = document.querySelector(".add");
+const cancelModalBtn = document.querySelector(".cancel");
+
+addBookBtn.addEventListener("click", () => {
+  dialog.returnValue = "";
+  dialog.showModal();
+});
+
+dialog.addEventListener("close", () => {
+  const form = dialog.querySelector("form");
+  
+  if (dialog.returnValue === "add") {
+    const data = new FormData(form);
+
+    addBookToLibrary(
+      data.get("title"),
+      data.get("author"),
+      data.get("pages"),
+      data.get("haveRead") ? "read" : "not read yet"
+    );
+
+    displayBooks();
+  }
+
+  form.reset();
+});
+
+
+
