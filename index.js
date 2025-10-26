@@ -42,12 +42,11 @@ const tableBody = document.getElementById("libraryTableBody");
 
 // Display function
 function displayBooks() {
-  tableBody.textContent = '';
+  tableBody.textContent = "";
 
   Library.forEach((book) => {
     const tableRow = document.createElement("tr");
     tableRow.dataset.id = book.id;
-
 
     const titleTableData = document.createElement("td");
     titleTableData.textContent = book.title;
@@ -81,7 +80,6 @@ function displayBooks() {
   });
 }
 
-
 displayBooks();
 
 // modal section
@@ -98,7 +96,7 @@ addBookBtn.addEventListener("click", () => {
 
 dialog.addEventListener("close", () => {
   const form = dialog.querySelector("form");
-  
+
   if (dialog.returnValue === "add") {
     const data = new FormData(form);
 
@@ -115,5 +113,40 @@ dialog.addEventListener("close", () => {
   form.reset();
 });
 
+// toggle and delete section
+Book.prototype.toggleRead = function () {
+  this.haveRead = this.haveRead === "read" ? "not read yet" : "read";
+}
 
+const confirmDialog = document.getElementById("confirmDialog");
 
+tableBody.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target.textContent === "Toggle") {
+    const id = target.closest("tr").dataset.id;
+    Library.forEach((book) => {
+      if (book.id === id) {
+        book.toggleRead();
+        displayBooks();
+      }
+    });
+  } else if (target.textContent === "Remove") {
+    const id = target.closest("tr").dataset.id;
+    confirmDialog.showModal();
+
+    confirmDialog.addEventListener(
+      "close",
+      () => {
+        if (confirmDialog.returnValue === "confirm") {
+          const index = Library.findIndex((book) => book.id === id);
+          if (index !== -1) {
+            Library.splice(index, 1);
+          }
+          displayBooks();
+        }
+      },
+      { once: true }
+    );
+  }
+});

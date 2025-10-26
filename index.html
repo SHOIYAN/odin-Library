@@ -1,66 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=poppins:300,400,600" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=poppins:300,400,600"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="navbar">
-        <h1>📚 My Library</h1>
-        <button id="newBookBtn">+ Add Book</button>
+      <h1>📚 My Library</h1>
+      <button id="newBookBtn">+ Add Book</button>
     </header>
     <main>
-        <table>
-            <thead>
-                <tr id="libraryTable">
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Read</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="libraryTableBody">
-
-            </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr id="libraryTable">
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="libraryTableBody"></tbody>
+      </table>
     </main>
     <dialog id="bookDialog" closedby="any">
-            <form method="dialog" class="book-form">
-                <h2>Add a New Book</h2>
+      <form method="dialog" class="book-form">
+        <h2>Add a New Book</h2>
 
-                <label>
-                    Title:
-                    <input type="text" minlength="3" placeholder="e.g. The Catcher in the Rye" name="title" required />
-                </label>
+        <label>
+          Title:
+          <input
+            type="text"
+            minlength="3"
+            placeholder="e.g. The Catcher in the Rye"
+            name="title"
+            required
+          />
+        </label>
 
-                <label>
-                    Author:
-                    <input  type="text" minlength="3" placeholder="e.g. J.D. Salinger" name="author" required />
-                </label>
+        <label>
+          Author:
+          <input
+            type="text"
+            minlength="3"
+            placeholder="e.g. J.D. Salinger"
+            name="author"
+            required
+          />
+        </label>
 
-                <label>
-                    Pages:
-                    <input type="number" placeholder="e.g. 277" max="100100" name="pages" required />
-                </label>
+        <label>
+          Pages:
+          <input
+            type="number"
+            placeholder="e.g. 277"
+            max="100100"
+            name="pages"
+            required
+          />
+        </label>
 
-                <label>
-                    <input  type="checkbox" name="haveRead" /> Already Read?
-                </label>
+        <label> <input type="checkbox" name="haveRead" /> Already Read? </label>
 
-                <div class="form-actions">
-                    <button type="submit" value="add" class="add">Add</button>
-                    <button type="submit" value="cancel" class="cancel" formnovalidate >Cancel</button>
-                </div>
-            </form>
+        <div class="form-actions">
+          <button type="submit" value="add" class="add">Add</button>
+          <button type="submit" value="cancel" class="cancel" formnovalidate>
+            Cancel
+          </button>
+        </div>
+      </form>
     </dialog>
-</body>
-
+    <dialog id="confirmDialog" closedby="any">
+      <form method="dialog">
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you want to remove this book?</p>
+        <div class="form-actions">
+          <button type="submit" value="confirm" class="add">Yes, Delete</button>
+          <button type="submit" value="cancel" class="cancel" formnovalidate>
+            Cancel
+          </button>
+        </div>
+      </form>
+    </dialog>
+  </body>
 </html>
