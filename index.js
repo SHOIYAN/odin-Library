@@ -15,6 +15,7 @@ function Book(title, author, pages, haveRead) {
 const theHobbit = new Book("Hobbit", "John", 4000, "not read yet");
 
 function addBookToLibrary(title, author, pages, haveRead) {
+  if (!title.trim() || !author.trim() || !pages) return;
   const book = new Book(title, author, pages, haveRead);
   book.id = crypto.randomUUID();
   Library.push(book);
