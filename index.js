@@ -2,14 +2,13 @@
 
 const Library = [];
 
-function Book(title, author, pages, haveRead) {
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor");
+class Book {
+  constructor (title, author, pages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead;
   }
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.haveRead = haveRead;
 }
 
 const theHobbit = new Book("Hobbit", "John", 4000, "not read yet");
