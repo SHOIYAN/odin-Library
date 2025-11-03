@@ -9,6 +9,9 @@ class Book {
     this.pages = pages;
     this.haveRead = haveRead;
   }
+  toggleRead () {
+  this.haveRead = this.haveRead === "read" ? "not read yet" : "read";
+}
 }
 
 function addBookToLibrary(title, author, pages, haveRead) {
@@ -111,9 +114,6 @@ dialog.addEventListener("close", () => {
 });
 
 // toggle and delete section
-Book.prototype.toggleRead = function () {
-  this.haveRead = this.haveRead === "read" ? "not read yet" : "read";
-}
 
 const confirmDialog = document.getElementById("confirmDialog");
 
